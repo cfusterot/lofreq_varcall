@@ -39,8 +39,8 @@ def get_resource(rule,resource):
 # -- Final output -- #
 rule all:
     input:
-        expand(["{OUTDIR}/{sample}/lofreq/{sample}.finish",
-                ], sample=samples['sample'], OUTDIR=OUTDIR)
+        expand(["{OUTDIR}/{sample}/lofreq/{sample}.filtered.sorted.bai",
+        "{OUTDIR}/{sample}/lofreq/{sample}.finish"], sample=samples['sample'], OUTDIR=OUTDIR)
 
 # -- Rule files -- #
 include: "rules/samtools.smk"
